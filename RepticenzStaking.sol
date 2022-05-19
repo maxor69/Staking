@@ -4,9 +4,9 @@ pragma solidity ^0.8.4;
 
 import "https://github.com/maxor69/Staking/blob/main/ReptiCoin.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol";
-import "https://github.com/maxor69/Mint/blob/main/smart-contract/contracts/Prueba2RepticenzNFT.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 
-contract NFTStaking is Ownable, IERC721Receiver {
+contract RepticenzStaking is Ownable, IERC721Receiver {
 
   uint256 public totalStaked;
   
@@ -22,13 +22,13 @@ contract NFTStaking is Ownable, IERC721Receiver {
   event Claimed(address owner, uint256 amount);
 
   // reference to the Block NFT contract
-  Prueba2RepticenzNFT nft;
+  ERC721Enumerable nft;
   ReptiCoin token;
 
   // maps tokenId to stake
   mapping(uint256 => Stake) public vault; 
 
-   constructor(ERC721Enumerable _nft, N2DRewards _token) { 
+   constructor(ERC721Enumerable _nft, ReptiCoin _token) { 
     nft = _nft;
     token = _token;
   }
