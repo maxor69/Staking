@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.4;
 
-import "https://github.com/maxor69/Staking/blob/main/ReptiCoin.sol";
+import "https://github.com/maxor69/Staking/ReptiCoin.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 
