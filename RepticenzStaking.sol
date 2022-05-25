@@ -6,7 +6,7 @@ import "https://github.com/maxor69/Staking/ReptiCoin.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 
-contract RepticenzStaking is Ownable, IERC721Receiver {
+contract ReptStaking is Ownable, IERC721Receiver {
 
   uint256 public totalStaked;
   
@@ -99,7 +99,7 @@ contract RepticenzStaking is Ownable, IERC721Receiver {
       Stake memory staked = vault[tokenId];
       require(staked.owner == account, "not an owner");
       uint256 stakedAt = staked.timestamp;
-      rewardmath = 1000 ether * (block.timestamp - stakedAt) / 86400 ;
+      rewardmath = 100 ether * (block.timestamp - stakedAt) / 86400 ;
       earned = rewardmath / 100;
       vault[tokenId] = Stake({
         owner: account,
@@ -175,7 +175,7 @@ contract RepticenzStaking is Ownable, IERC721Receiver {
         uint256,
         bytes calldata
     ) external pure override returns (bytes4) {
-      require(from == address(0x0), "Cannot send NFTs to Vault directly");
+      require(from == address(0x0), "Cannot send nfts to Vault directly");
       return IERC721Receiver.onERC721Received.selector;
     }
   
