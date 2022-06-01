@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT LICENSE
 
-pragma solidity 0.8.4;
+pragma solidity ^0.8.4;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
@@ -17,12 +17,8 @@ contract ReptiCoin is ERC20, ERC20Burnable, Ownable {
   uint256 private MAXSUP;
   uint256 constant MAXIMUMSUPPLY=1000000*10**18;
 
-<<<<<<< HEAD
-  constructor() ERC20("ReptiCoin", "$RPT") {  //Nombre de la cripto y simbolo
-=======
-  constructor() ERC20("ReptiCoin", "$RPT") { 
->>>>>>> b6166b8b8d7ae1eaf1c59841c37fcc63632b869b
-      _mint(msg.sender, 1000000 * 10 ** 18);
+  constructor() ERC20("ReptiCoin", "$RPT") {  
+      _mint(msg.sender, 10000 * 10 ** 18);
 
   }
 
